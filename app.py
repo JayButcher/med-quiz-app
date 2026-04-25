@@ -15,10 +15,10 @@ except:
     st.error("⚠️ API_KEY não encontrada nos Secrets do Streamlit.")
     st.stop()
 
-genai.configure(api_key=API_KEY)
+genai.configure(api_key=st.secrets["api_key"])
 
 # Usamos o 1.5 Flash para velocidade e longa janela de contexto (para ler imagem + texto longo)
-model = genai.GenerativeModel('gemini-1.5-pro')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 st.set_page_config(page_title="MedCase Tutor - UNIFUNCESI", layout="wide")
 
