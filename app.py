@@ -36,6 +36,15 @@ if 'historico_respostas' not in st.session_state:
 # BARRA LATERAL - NAVEGAÇÃO E RELATÓRIOS
 # ==========================================
 with st.sidebar:
+    st.title("🔒 Acesso Restrito")
+    senha_correta = "itabira2026"
+    senha_digitada = st.text_input("Digite a senha da turma:", type="password")
+
+    if senha_digitada != senha_correta:
+        st.warning("Aguardando senha...")
+        st.stop() # Trava o app aqui se a senha estiver errada
+
+    st.divider() # Uma linha para separar a trava do menu
     st.title("🩺 MedCase Tutor")
     st.subheader("by João Paulo")
     
