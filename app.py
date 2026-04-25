@@ -18,7 +18,7 @@ except:
 genai.configure(api_key=API_KEY)
 
 # Usamos o 1.5 Flash para velocidade e longa janela de contexto (para ler imagem + texto longo)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 st.set_page_config(page_title="MedCase Tutor - UNIFUNCESI", layout="wide")
 
